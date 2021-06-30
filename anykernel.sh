@@ -40,16 +40,8 @@ if mountpoint -q /data; then
   for list_path in $(find /sys/fs/f2fs* -name extension_list); do
     hash="$(md5sum $list_path | sed 's/extenstion/extension/g' | cut -d' ' -f1)"
 
-    # Skip update if our list is already active
-    if [[ $hash == "43df40d20dcb96aa7e8af0e3d557d086" ]]; then
-      echo "Extension list up-to-date: $list_path"
-      continue
-    fi
-
-    ui_print "  • Optimizing F2FS extension list"
-    echo "Updating extension list: $list_path"
-
-    echo "Clearing extension list"
+## AnyKernel boot install
+dump_boot;
 
     hot_count="$(grep -n 'hot file extens' $list_path | cut -d':' -f1)"
     list_len="$(cat $list_path | wc -l)"
@@ -81,5 +73,21 @@ fi
 ## AnyKernel install
 dump_boot;
 write_boot;
-## end install
+## end boot install
+
+
+# shell variables
+#block=vendor_boot;
+#is_slot_device=1;
+#ramdisk_compression=auto;
+
+# reset for vendor_boot patching
+#reset_ak;
+
+
+## AnyKernel vendor_boot install
+#split_boot; # skip unpack/repack ramdisk since we don't need vendor_ramdisk access
+
+#flash_boot;
+## end vendor_boot install
 
