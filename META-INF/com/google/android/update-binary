@@ -464,6 +464,12 @@ if [ -f banner ]; then
   ui_print " " " ";
 fi;
 
+
+if [ -f changelog ]; then
+  ui_printfile changelog;
+  ui_print " " " ";
+fi;
+
 KERNEL_STRING="$(file_getprop anykernel.sh kernel.string)";
 ui_print "$KERNEL_STRING";
 if [ -f version ]; then
