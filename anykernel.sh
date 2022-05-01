@@ -6,7 +6,6 @@
 properties() { '
 kernel.string=JandaX Kernel for Redmi Note 9 Pro [joyeuse]
 kernel.string=
-kernel.for=
 kernel.compiler=
 kernel.made=
 kernel.version=
