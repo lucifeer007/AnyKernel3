@@ -8,7 +8,6 @@ kernel.string=JandaX Kernel for Redmi Note 9 Pro [joyeuse]
 kernel.string=
 kernel.compiler=
 kernel.made=
-kernel.version=
 message.word=
 do.devicecheck=1
 do.modules=0
