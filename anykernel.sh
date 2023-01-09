@@ -5,10 +5,9 @@
 # begin properties
 properties() { '
 kernel.string=JandaX Kernel for Redmi Note 9 Pro [joyeuse]
-kernel.string=
-kernel.compiler=
-kernel.made=
-message.word=
+kernel.compiler= GengKapak Clang
+kernel.made= Idk
+message.word= Nothing, I dont wanna write a tragedy
 do.devicecheck=1
 do.modules=0
 do.systemless=0
@@ -31,7 +30,7 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
 
 ## boot shell variables
-block=;
+block=/dev/block/bootdevice/by-name/boot;
 is_slot_device=auto;
 ramdisk_compression=auto;
 patch_vbmeta_flag=auto;
