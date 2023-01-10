@@ -36,40 +36,6 @@ patch_vbmeta_flag=auto;
 set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
-if mountpoint -q /data; then
-  # Optimize F2FS extension list (@arter97)
-  for list_path in $(find /sys/fs/f2fs* -name extension_list); do
-    hash="$(md5sum $list_path | sed 's/extenstion/extension/g' | cut -d' ' -f1)"
-
-## AnyKernel boot install
-dump_boot;
-
-    hot_count="$(grep -n 'hot file extens' $list_path | cut -d':' -f1)"
-    list_len="$(cat $list_path | wc -l)"
-    cold_count="$((list_len - hot_count))"
-
-    cold_list="$(head -n$((hot_count - 1)) $list_path | grep -v ':')"
-    hot_list="$(tail -n$cold_count $list_path)"
-
-    for ext in $cold_list; do
-      [ ! -z $ext ] && echo "[c]!$ext" > $list_path
-    done
-
-    for ext in $hot_list; do
-      [ ! -z $ext ] && echo "[h]!$ext" > $list_path
-    done
-
-    echo "Writing new extension list"
-
-    for ext in $(cat $home/f2fs-cold.list | grep -v '#'); do
-      [ ! -z $ext ] && echo "[c]$ext" > $list_path
-    done
-
-    for ext in $(cat $home/f2fs-hot.list); do
-      [ ! -z $ext ] && echo "[h]$ext" > $list_path
-    done
-  done
-fi
 
 ## AnyKernel install
 dump_boot;
