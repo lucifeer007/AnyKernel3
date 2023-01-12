@@ -4,18 +4,17 @@
 ### AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=JandaX-MaximumSlav
+kernel.string=JandaX Kernel for Redmi Note 9 Pro [joyeuse]
 do.devicecheck=1
 do.modules=0
-do.systemless=1
+do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=miatoll
-device.name2=curtana
-device.name3=excalibur
-device.name4=gram
-device.name5=joyeuse
-supported.versions=11.0-12.0-13.0
+device.name1=joyeuse
+device.name2=Redmi note 9 PRO
+device.name3=joyeuse_eea
+device.name4=Joyeuse_EEA
+supported.versions=10, 11, 12, 13
 supported.patchlevels=
 '; } # end properties
 
