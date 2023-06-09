@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=JandaX Kernel for Redmi Note 9 Pro [joyeuse]
+kernel.string=DeathRhythm for Redmi Note 9 Pro [joyeuse]
 kernel.compiler= GengKapak Clang
 kernel.made= Idk
 message.word= Nothing, I dont wanna write a tragedy
@@ -17,7 +17,7 @@ device.name1=joyeuse
 device.name2=Redmi note 9 PRO
 device.name3=joyeuse_eea
 device.name4=Joyeuse_EEA
-supported.versions=10, 11, 12, 13
+supported.versions=13
 supported.patchlevels=
 '; } # end properties
 
