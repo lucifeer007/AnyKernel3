@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=JandaX Kernel for Redmi Note 9 Pro [joyeuse]
+kernel.string=Ghost Inside Kernel
 kernel.compiler= GengKapak Clang
 kernel.made= Idk
 message.word= Nothing, I dont wanna write a tragedy
